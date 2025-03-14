@@ -10,8 +10,8 @@ datasets:
   test_1:  # the 1st test dataset
     name: GoPro
     type: PairedImageIRDataset
-    dataroot_gt: datasets/GoPro/test/target
-    dataroot_lq: datasets/GoPro/test/input
+    dataroot_gt: E:\Project\HI-Diff\datasets\GoPro\test\GoPro\target
+    dataroot_lq: E:\Project\HI-Diff\datasets\GoPro\test\GoPro\input
     filename_tmpl: '{}'
     io_backend:
       type: disk
@@ -19,8 +19,8 @@ datasets:
   test_2:  # the 2st test dataset
     name: HIDE
     type: PairedImageIRDataset
-    dataroot_gt: datasets/test/HIDE/target
-    dataroot_lq: datasets/test/HIDE/input
+    dataroot_gt: E:\Project\HI-Diff\datasets\test\HIDE\target
+    dataroot_lq: E:\Project\HI-Diff\datasets\test\HIDE\input
     filename_tmpl: '{}'
     io_backend:
       type: disk
@@ -28,8 +28,8 @@ datasets:
   test_3:  # the 3st test dataset
     name: RealBlur_J
     type: PairedImageIRDataset
-    dataroot_gt: datasets/test/RealBlur_J/target
-    dataroot_lq: datasets/test/RealBlur_J/input
+    dataroot_gt: E:\Project\HI-Diff\datasets\test\RealBlur_J\target
+    dataroot_lq: E:\Project\HI-Diff\datasets\test\RealBlur_J\input
     filename_tmpl: '{}'
     io_backend:
       type: disk
@@ -37,8 +37,8 @@ datasets:
   test_4:  # the 4st test dataset
     name: RealBlur_R
     type: PairedImageIRDataset
-    dataroot_gt: datasets/test/RealBlur_R/target
-    dataroot_lq: datasets/test/RealBlur_R/input
+    dataroot_gt: E:\Project\HI-Diff\datasets\test\RealBlur_R\target
+    dataroot_lq: E:\Project\HI-Diff\datasets\test\RealBlur_R\input
     filename_tmpl: '{}'
     io_backend:
       type: disk
@@ -98,15 +98,15 @@ diffusion_schedule:
 
 # path
 path:
-  pretrain_network_g: experiments/pretrained_models/HI_Diff_GoPro/net_g.pth
+  pretrain_network_g: E:\Project\HI-Diff\experiments\pretrained_models\HI_Diff_GoPro\net_g.pth
   param_key_g: params
   strict_load_g: true
 
-  pretrain_network_le_dm: experiments/pretrained_models/HI_Diff_GoPro/net_le_dm.pth
+  pretrain_network_le_dm: E:\Project\HI-Diff\experiments\pretrained_models\HI_Diff_GoPro\net_le_dm.pth
   param_key_g: params
   strict_load_le_dm: true
 
-  pretrain_network_d: experiments/pretrained_models/HI_Diff_GoPro/net_d.pth
+  pretrain_network_d: E:\Project\HI-Diff\experiments\pretrained_models\HI_Diff_GoPro\net_d.pth
   param_key_g: params
   strict_load_d: true
 
