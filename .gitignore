@@ -8,7 +8,11 @@ visual/*
 
 *.DS_Store
 .idea
-
+SAM_datasets_blur_png_5_2/*
+SAM_datasets_blur_png_3x3/*
+SAM_datasets_blur_png_5x5/*
+SAM_datasets_blur_png_7x7/*
+SAM_datasets_blur_png_9x9/*
 # ignored files
 version.py
 
