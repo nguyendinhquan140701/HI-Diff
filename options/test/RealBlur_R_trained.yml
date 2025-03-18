@@ -1,5 +1,5 @@
 # general settings
-name:  test_HI_Diff
+name:  test_HI_Diff_RealBlur_R
 model_type: HI_Diff_S2
 scale: 1
 num_gpu: 1  # set num_gpu: 0 for cpu mode
@@ -8,23 +8,10 @@ manual_seed: 100
 # dataset and data loader settings
 datasets:
   test_1:  # the 4st test dataset
-    name: SAM_datasets_blur
+    name: RealBlur_R
     type: PairedImageIRDataset
-    # dataroot_gt: E:\Project\HI-Diff\datasets\test\SAM_datasets_blur_png_3x3\target
-    # dataroot_lq: E:\Project\HI-Diff\datasets\test\SAM_datasets_blur_png_3x3\input
-
-    # dataroot_gt: E:\Project\HI-Diff\datasets\test\SAM_datasets_blur_png_5x5\target
-    # dataroot_lq: E:\Project\HI-Diff\datasets\test\SAM_datasets_blur_png_5x5\input
-
-    # dataroot_gt: E:\Project\HI-Diff\datasets\test\SAM_datasets_blur_png_7x7\target
-    # dataroot_lq: E:\Project\HI-Diff\datasets\test\SAM_datasets_blur_png_7x7\input
-
-    # dataroot_gt: E:\Project\HI-Diff\datasets\test\SAM_datasets_blur_png_9x9\target
-    # dataroot_lq: E:\Project\HI-Diff\datasets\test\SAM_datasets_blur_png_9x9\input
-
-    dataroot_gt: E:\Project\HI-Diff\datasets\test\SAM_datasets_blur\target
-    dataroot_lq: E:\Project\HI-Diff\datasets\test\SAM_datasets_blur\input
-
+    dataroot_gt: E:\Project\HI-Diff\datasets\test\RealBlur_R\target
+    dataroot_lq: E:\Project\HI-Diff\datasets\test\RealBlur_R\input
     filename_tmpl: '{}'
     io_backend:
       type: disk
@@ -34,10 +21,10 @@ network_g:
   type: Transformer
   inp_channels: 3
   out_channels: 3
-  dim: 48
-  num_blocks: [3,5,6,6]
+  dim: 32
+  num_blocks: [2, 3, 4, 4]
   num_refinement_blocks: 4
-  heads: [1,2,4,8]
+  heads: [1,2,4,4]
   ffn_expansion_factor: 2
   bias: False
   LayerNorm_type: WithBias
@@ -79,15 +66,15 @@ diffusion_schedule:
 
 # path
 path:
-  pretrain_network_g: E:\Project\HI-Diff\experiments\pretrained_models\HI_Diff_RealBlur_R\net_g.pth
+  pretrain_network_g: E:\Project\HI-Diff\experiments\train_HI_Diff_RealBlur_R_S2\models\net_g_latest.pth
   param_key_g: params
   strict_load_g: true
 
-  pretrain_network_le_dm: E:\Project\HI-Diff\experiments\pretrained_models\HI_Diff_RealBlur_R\net_le_dm.pth
+  pretrain_network_le_dm: E:\Project\HI-Diff\experiments\train_HI_Diff_RealBlur_R_S2\models\net_le_dm_latest.pth
   param_key_le_dm: params
   strict_load_le_dm: true
 
-  pretrain_network_d: E:\Project\HI-Diff\experiments\pretrained_models\HI_Diff_RealBlur_R\net_d.pth
+  pretrain_network_d: E:\Project\HI-Diff\experiments\train_HI_Diff_RealBlur_R_S2\models\net_d_latest.pth
   param_key_d: params
   strict_load_d: true
 

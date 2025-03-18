@@ -1,5 +1,5 @@
 # general settings
-name:  test_HI_Diff_GoPro
+name:  test_HI_Diff
 model_type: HI_Diff_S2
 scale: 1
 num_gpu: 1  # set num_gpu: 0 for cpu mode
@@ -8,40 +8,53 @@ manual_seed: 100
 # dataset and data loader settings
 datasets:
   test_1:  # the 1st test dataset
-    name: GoPro
+    name: SAM_datasets_blur
     type: PairedImageIRDataset
-    dataroot_gt: E:\Project\HI-Diff\datasets\GoPro\test\GoPro\target
-    dataroot_lq: E:\Project\HI-Diff\datasets\GoPro\test\GoPro\input
+    # dataroot_gt: E:\Project\HI-Diff\datasets\test\SAM_datasets_blur_png_3x3\target
+    # dataroot_lq: E:\Project\HI-Diff\datasets\test\SAM_datasets_blur_png_3x3\input
+
+    # dataroot_gt: E:\Project\HI-Diff\datasets\test\SAM_datasets_blur_png_5x5\target
+    # dataroot_lq: E:\Project\HI-Diff\datasets\test\SAM_datasets_blur_png_5x5\input
+
+    # dataroot_gt: E:\Project\HI-Diff\datasets\test\SAM_datasets_blur_png_7x7\target
+    # dataroot_lq: E:\Project\HI-Diff\datasets\test\SAM_datasets_blur_png_7x7\input
+
+    # dataroot_gt: E:\Project\HI-Diff\datasets\test\SAM_datasets_blur_png_9x9\target
+    # dataroot_lq: E:\Project\HI-Diff\datasets\test\SAM_datasets_blur_png_9x9\input
+    
+    dataroot_gt: E:\Project\HI-Diff\datasets\test\SAM_datasets_blur\target
+    dataroot_lq: E:\Project\HI-Diff\datasets\test\SAM_datasets_blur\input
+    
     filename_tmpl: '{}'
     io_backend:
       type: disk
 
-  test_2:  # the 2st test dataset
-    name: HIDE
-    type: PairedImageIRDataset
-    dataroot_gt: E:\Project\HI-Diff\datasets\test\HIDE\target
-    dataroot_lq: E:\Project\HI-Diff\datasets\test\HIDE\input
-    filename_tmpl: '{}'
-    io_backend:
-      type: disk
+  # test_2:  # the 2st test dataset
+  #   name: HIDE
+  #   type: PairedImageIRDataset
+  #   dataroot_gt: E:\Project\HI-Diff\datasets\test\HIDE\target
+  #   dataroot_lq: E:\Project\HI-Diff\datasets\test\HIDE\input
+  #   filename_tmpl: '{}'
+  #   io_backend:
+  #     type: disk
 
-  test_3:  # the 3st test dataset
-    name: RealBlur_J
-    type: PairedImageIRDataset
-    dataroot_gt: E:\Project\HI-Diff\datasets\test\RealBlur_J\target
-    dataroot_lq: E:\Project\HI-Diff\datasets\test\RealBlur_J\input
-    filename_tmpl: '{}'
-    io_backend:
-      type: disk
+  # test_3:  # the 3st test dataset
+  #   name: RealBlur_J
+  #   type: PairedImageIRDataset
+  #   dataroot_gt: E:\Project\HI-Diff\datasets\test\RealBlur_J\target
+  #   dataroot_lq: E:\Project\HI-Diff\datasets\test\RealBlur_J\input
+  #   filename_tmpl: '{}'
+  #   io_backend:
+  #     type: disk
 
-  test_4:  # the 4st test dataset
-    name: RealBlur_R
-    type: PairedImageIRDataset
-    dataroot_gt: E:\Project\HI-Diff\datasets\test\RealBlur_R\target
-    dataroot_lq: E:\Project\HI-Diff\datasets\test\RealBlur_R\input
-    filename_tmpl: '{}'
-    io_backend:
-      type: disk
+  # test_4:  # the 4st test dataset
+  #   name: RealBlur_R
+  #   type: PairedImageIRDataset
+  #   dataroot_gt: E:\Project\HI-Diff\datasets\test\RealBlur_R\target
+  #   dataroot_lq: E:\Project\HI-Diff\datasets\test\RealBlur_R\input
+  #   filename_tmpl: '{}'
+  #   io_backend:
+  #     type: disk
 
 # network structures
 network_g:
